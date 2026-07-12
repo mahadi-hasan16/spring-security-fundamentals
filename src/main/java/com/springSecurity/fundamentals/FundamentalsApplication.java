@@ -9,7 +9,7 @@ public class FundamentalsApplication {
 
 	public static void main(String[] args) {
 		Dotenv dotenv = Dotenv.configure()
-				.filename(".env.dev")
+				.filename(".env")
 				.load();
 
 		dotenv.entries().forEach(
