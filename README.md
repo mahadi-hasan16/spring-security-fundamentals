@@ -36,33 +36,6 @@ The goal is to understand *why* each piece exists, not just copy a working confi
 - Maven (or use the included `mvnw` wrapper)
 - A running PostgreSQL instance
 
-### 1. Clone the repo
-
-```bash
-git clone https://github.com/mahadi-hasan16/spring-security-fundamentals.git
-cd spring-security-fundamentals
-```
-
-### 2. Configure environment variables
-
-The app reads its datasource config from environment variables via `spring.config.import: "optional:file:.env[.properties]"`, backed by `dotenv-java`. Create a `.env` file in the project root:
-
-```env
-DATABASE_URL=jdbc:postgresql://localhost:5432/spring_security_fundamentals
-DATABASE_USER=your_db_username
-DATABASE_PASSWORD=your_db_password
-```
-
-> **Note:** Don't wrap values in quotes — `dotenv-java` parses them literally, so `DATABASE_USER="postgres"` will include the quote characters in the actual value.
-
-### 3. Run the application
-
-```bash
-./mvnw spring-boot:run
-```
-
-The app starts on `http://localhost:8080`. `ddl-auto: update` is enabled, so the `users` table is created automatically on first run — insert a user manually (with a BCrypt-hashed password) to test login.
-
 ## Security Configuration Notes
 
 - **Password storage:** `BCryptPasswordEncoder` — never plaintext.
