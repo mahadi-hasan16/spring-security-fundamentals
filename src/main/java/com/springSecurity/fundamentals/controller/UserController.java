@@ -13,9 +13,15 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
+
     @PostMapping("/register")
     public UserEntity createUser(@RequestBody UserEntity userEntity) {
         return this.userService.registerUser(userEntity);
+    }
+
+    @PostMapping("/login")
+    public String login(@RequestBody UserEntity userEntity) {
+        return userService.verifyUser(userEntity);
     }
 
     @GetMapping("/list")
