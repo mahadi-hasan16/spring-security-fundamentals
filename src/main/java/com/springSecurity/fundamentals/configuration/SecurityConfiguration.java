@@ -37,6 +37,8 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(request -> request
                         .requestMatchers("/api/user/register", "/api/user/login")
                         .permitAll()
+                        .requestMatchers("/api/user/admin").hasRole("ADMIN")
+                        .requestMatchers("/api/user/editor").hasRole("EDITOR")
                         .anyRequest()
                         .authenticated())
                 .formLogin(Customizer.withDefaults())

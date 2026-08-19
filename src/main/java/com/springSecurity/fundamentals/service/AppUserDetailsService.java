@@ -2,7 +2,7 @@ package com.springSecurity.fundamentals.service;
 
 import com.springSecurity.fundamentals.entity.UserEntity;
 import com.springSecurity.fundamentals.repository.UserRepository;
-import com.springSecurity.fundamentals.utility.classes.UserPrincipal;
+import com.springSecurity.fundamentals.utility.classes.AppUserDetails;
 import org.jspecify.annotations.NonNull;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -25,6 +25,6 @@ public class AppUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException("User: "+username+"not found");
         }
 
-        return new UserPrincipal(user);
+        return new AppUserDetails(user);
     }
 }

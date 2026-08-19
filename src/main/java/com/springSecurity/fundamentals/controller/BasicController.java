@@ -20,15 +20,15 @@ public class BasicController {
         return csrfToken;
     }
 
-    @GetMapping("/admin")
-    @PreAuthorize("hasRole('ADMIN')")
-    public String admin() {
-        return "I AM ADMIN";
-    }
-    
-    @GetMapping("/user")
-    @PreAuthorize("hasRole('USER')")
-    public String user() {
-        return "I AM USER";
-    }
+//    @GetMapping("/admin")
+//    @PreAuthorize("hasRole('ADMIN')")
+//    public String admin() {
+//        return "I AM ADMIN";
+//    }
+//
+//    @GetMapping("/user")
+//    @PreAuthorize("hasRole('USER')")
+//    public String user() {
+//        return "I AM USER";
+//    }
 }

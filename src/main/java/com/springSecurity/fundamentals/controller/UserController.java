@@ -28,4 +28,13 @@ public class UserController {
     public List<UserEntity> listUsers() {
         return userService.findAll();
     }
+
+    @GetMapping("/admin")
+    public String admin() {
+        return "I AM ADMIN";
+    }
+    @GetMapping("/editor")
+    public String editor() {
+        return "I AM EDITOR";
+    }
 }

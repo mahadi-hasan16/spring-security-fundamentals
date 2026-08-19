@@ -28,8 +28,8 @@ public class JwtUtility {
     public String generateJwtToken(String username, String password) {
         long nowMillis = System.currentTimeMillis();
         Date now = new Date(nowMillis);
-        long expMillis = nowMillis + 60000;
-        Date exp = new Date(nowMillis + expMillis);
+        long expMillis = nowMillis + 600000000000000000L;
+        Date exp = new Date(expMillis);
 
         Map<String, Object> claims = new HashMap<>();
         return Jwts.builder()
